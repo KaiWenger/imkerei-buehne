@@ -20,12 +20,12 @@ body {
 
 /* Header & Navigation */
 header {
-    background-color: rgba(50, 50, 50, 0.75);  
+    background-color: rgba(50, 50, 50, 0.45); 
     padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
-    backdrop-filter: blur(4px); 
+    backdrop-filter: blur(4px);
 }
 
 .navbar {
@@ -44,7 +44,7 @@ header {
 .logo {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #f4d03f;
+    color: #ffffff;  
 }
 
 .nav-links {
@@ -131,7 +131,10 @@ header {
 
 .about-image {
     display: flex;
-    align-items: flex-start;   /* ← statt stretch */
+    align-items: flex-start;
+    max-height: 200px;   
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .about-image img {
