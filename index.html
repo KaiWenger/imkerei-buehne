@@ -61,22 +61,26 @@
         <section id="products" class="products">
             <div class="container">
                 <h2>Aus dem Bienenstock</h2>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <img src="images/honig.jpg" alt="Blütenhonig">
-                        <h3>Blütenhonig</h3>
-                        <p>Unser klassischer Blütenhonig mit zartem, süßem Geschmack. Vielseitig einsetzbar und wunderbar im Tee.</p>
+                <div class="carousel-wrapper">
+                    <button class="carousel-btn left" onclick="scrollCards(-1)">&#8249;</button>
+                    <div class="products-grid" id="productsGrid">
+                        <div class="product-card">
+                            <img src="images/bluenossom.jpg" alt="Blütenhonig">
+                            <h3>Blütenhonig</h3>
+                            <p>Unser klassischer Blütenhonig mit zartem, süßem Geschmack. Vielseitig einsetzbar und wunderbar im Tee.</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/waldhonig.jpg" alt="Aufstrich/ Sirup">
+                            <h3>Aufstrich/ Sirup</h3>
+                            <p>Ein kräftiger, würziger Honig mit intensivem Geschmack. Perfekt für Feinschmecker und besondere Anlässe.</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/linden.jpg" alt="Propolis (Bienenharz)">
+                            <h3>Propolis (Bienenharz)</h3>
+                            <p>Milder Lindenhonig mit fein-blumigem Aroma. Beliebt bei Kindern und als Hustenhilfe geschätzt.</p>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <img src="images/sirup.jpg" alt="Feinkost">
-                        <h3>Feinkost</h3>
-                        <p>Aromatische Aufstriche und Sirupe aus der Imkerei – natürlich, fein und vielseitig.</p>
-                    </div>
-                    <div class="product-card">
-                        <img src="images/propolis.jpg" alt="Propolis (Bienenharz)">
-                        <h3>Propolis (Bienenharz)</h3>
-                        <p>Kräftiges Propolis aus eigener Imkerei – aromatisch, würzig und vielseitig verwendbar.</p>
-                    </div>
+                    <button class="carousel-btn right" onclick="scrollCards(1)">&#8250;</button>
                 </div>
             </div>
         </section>
@@ -111,5 +115,18 @@
             <p><a href="impressum.html">Impressum</a> | <a href="#">Datenschutz</a></p>
         </div>
     </footer>
+    
+    <script>
+        function scrollCards(dir) {
+            const grid = document.getElementById('productsGrid');
+            const cards = grid.querySelectorAll('.product-card');
+            const visible = Math.round(grid.offsetWidth / cards[0].offsetWidth);
+            let current = Math.round(grid.scrollLeft / cards[0].offsetWidth);
+            let next = current + dir * visible;
+            next = Math.max(0, Math.min(next, cards.length - visible));
+            grid.scrollTo({ left: next * cards[0].offsetWidth, behavior: 'smooth' });
+        }
+    </script>
+    
 </body>
 </html>
