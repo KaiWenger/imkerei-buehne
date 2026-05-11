@@ -349,10 +349,35 @@ header {
 @media (max-width: 768px) {
     .news-layout {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .news-fixed-image {
+        height: 200px;        /* ← feste, kleinere Höhe */
     }
 
     .news-fixed-image img {
-        height: 250px;
+        height: 200px;        /* ← passend zur Höhe des Containers */
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .news-card {
+        padding: 1rem;        /* ← weniger Innenabstand */
+    }
+
+    .news-card h3 {
+        font-size: 1rem;      /* ← kleinere Überschrift */
+    }
+
+    .news-card p {
+        font-size: 0.85rem;   /* ← kleinerer Text */
+    }
+
+    .news-btn {
+        width: 36px;          /* ← kleinere Buttons */
+        height: 36px;
+        font-size: 1.4rem;
     }
 }
 
@@ -485,7 +510,7 @@ footer a:hover {
     }
 
     .product-card {
-        width: 80%;
+        width: 55%;
     }
 }
 
