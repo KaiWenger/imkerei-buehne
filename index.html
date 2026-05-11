@@ -159,11 +159,21 @@
             <p><a href="impressum.html">Impressum</a> | <a href="#">Datenschutz</a></p>
         </div>
     </footer>
-    
+
     <script>
         function scrollCards(dir) {
             const grid = document.getElementById('productsGrid');
             const cards = grid.querySelectorAll('.product-card');
+            const visible = Math.round(grid.offsetWidth / cards[0].offsetWidth);
+            let current = Math.round(grid.scrollLeft / cards[0].offsetWidth);
+            let next = current + dir * visible;
+            next = Math.max(0, Math.min(next, cards.length - visible));
+            grid.scrollTo({ left: next * cards[0].offsetWidth, behavior: 'smooth' });
+        }
+
+        function scrollNews(dir) {
+            const grid = document.getElementById('newsGrid');
+            const cards = grid.querySelectorAll('.news-card');
             const visible = Math.round(grid.offsetWidth / cards[0].offsetWidth);
             let current = Math.round(grid.scrollLeft / cards[0].offsetWidth);
             let next = current + dir * visible;
