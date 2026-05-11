@@ -92,9 +92,16 @@
                 <div class="contact-content">
                     <div class="contact-info">
                         <h3>Imkerei Bühne</h3>
-                        <p><strong>Adresse:</strong> [Ihre Adresse hier einfügen]</p>
-                        <p><strong>Telefon:</strong> [Ihre Telefonnummer hier einfügen]</p>
-                        <p><strong>E-Mail:</strong> <a href="mailto:info@imkerei-buehne.de">info@imkerei-buehne.de</a></p>
+                        <p><strong>Adresse:</strong> Wemhöferstiege 2, 48565 Steinfurt</p>
+                        <p><strong>Telefon:</strong> 0172-1987362</p>
+                        <p><strong>E-Mail:</strong> <a id="emailLink" href="#">E-Mail laden...</a></p>
+                        <script>
+                            const u = 'buehne.st';
+                            const d = 'gmx.de';
+                            const link = document.getElementById('emailLink');
+                            link.href = 'mailto:' + u + '@' + d;
+                            link.textContent = u + '@' + d;
+                        </script>
                     </div>
                     <div class="contact-form">
                         <form action="#" method="POST">
