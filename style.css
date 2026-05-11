@@ -261,7 +261,7 @@ header {
 
 .news-fixed-image img {
     width: 100%;
-    height: auto;        
+    height: 100%;
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -508,11 +508,14 @@ footer a:hover {
     }
 
     .news-fixed-image {
-        height: 120px;
+        height: 120px !important;
+        max-height: 120px !important;
+        overflow: hidden !important;
     }
-
+    
     .news-fixed-image img {
-        height: 120px;
+        height: 120px !important;
+        max-height: 120px !important;
         object-fit: cover;
     }
 
