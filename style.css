@@ -503,7 +503,8 @@ footer a:hover {
     }
 
     .news-layout {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+        align-items: start !important;
         gap: 1rem;
     }
 
