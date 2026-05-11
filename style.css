@@ -233,12 +233,6 @@ header {
     font-size: 0.85rem;
 }
 
-@media (max-width: 768px) {
-    .product-card {
-        width: 80%;
-    }
-}
-
 /* News Section */
 .news {
     padding: 80px 20px;
@@ -346,40 +340,6 @@ header {
     line-height: 1.6;
 }
 
-@media (max-width: 768px) {
-    .news-layout {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .news-fixed-image {
-        height: 200px;        /* ← feste, kleinere Höhe */
-    }
-
-    .news-fixed-image img {
-        height: 200px;        /* ← passend zur Höhe des Containers */
-        width: 100%;
-        object-fit: cover;
-    }
-
-    .news-card {
-        padding: 1rem;        /* ← weniger Innenabstand */
-    }
-
-    .news-card h3 {
-        font-size: 1rem;      /* ← kleinere Überschrift */
-    }
-
-    .news-card p {
-        font-size: 0.85rem;   /* ← kleinerer Text */
-    }
-
-    .news-btn {
-        width: 36px;          /* ← kleinere Buttons */
-        height: 36px;
-        font-size: 1.4rem;
-    }
-}
 
 /* Contact Section */
 .contact {
@@ -472,17 +432,25 @@ footer a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Navigation */
     .nav-links {
         gap: 1rem;
         font-size: 0.9rem;
     }
 
+    /* Hero */
     .hero-content h1 {
         font-size: 2rem;
     }
 
     .hero-content p {
         font-size: 1rem;
+    }
+
+    /* About */
+    .about-content,
+    .about-content-reversed {
+        grid-template-columns: 1fr;
     }
 
     .about-content,
@@ -493,12 +461,9 @@ footer a:hover {
 
     .about h2,
     .products h2,
-    .contact h2 {
+    .contact h2,
+    .news h2 {
         font-size: 2rem;
-    }
-    .about-content,
-    .about-content-reversed {
-        grid-template-columns: 1fr;
     }
 
     .about-image {
@@ -509,8 +474,56 @@ footer a:hover {
         height: 250px;
     }
 
+    /* Products */
+    .products {
+        padding: 40px 20px;
+    }
+
     .product-card {
-        width: 55%;
+        width: 60%;
+    }
+
+    .product-card img {
+        height: 100px;
+    }
+
+    .product-card h3 {
+        font-size: 0.95rem;
+    }
+
+    .product-card p {
+        font-size: 0.8rem;
+    }
+
+    /* News */
+    .news {
+        padding: 40px 20px;
+    }
+
+    .news-layout {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .news-fixed-image {
+        height: 150px;
+    }
+
+    .news-fixed-image img {
+        height: 150px;
+        object-fit: cover;
+    }
+
+    .news-card {
+        padding: 1rem;
+    }
+
+    .news-card h3 {
+        font-size: 0.95rem;
+    }
+
+    .news-card p {
+        font-size: 0.8rem;
     }
 }
 
