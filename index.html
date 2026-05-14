@@ -162,21 +162,23 @@
         function scrollCards(dir) {
             const grid = document.getElementById('productsGrid');
             const cards = grid.querySelectorAll('.product-card');
-            const visible = Math.round(grid.offsetWidth / cards[0].offsetWidth);
-            let current = Math.round(grid.scrollLeft / cards[0].offsetWidth);
-            let next = current + dir * visible;
-            next = Math.max(0, Math.min(next, cards.length - visible));
-            grid.scrollTo({ left: next * cards[0].offsetWidth, behavior: 'smooth' });
+            const cardWidth = cards[0].offsetWidth + 24;
+            let current = Math.round(grid.scrollLeft / cardWidth);
+            let next = current + dir;
+            if (next >= cards.length) next = 0;
+            if (next < 0) next = cards.length - 1;
+            grid.scrollTo({ left: next * cardWidth, behavior: 'smooth' });
         }
-
+    
         function scrollNews(dir) {
             const grid = document.getElementById('newsGrid');
             const cards = grid.querySelectorAll('.news-card');
-            const visible = Math.round(grid.offsetWidth / cards[0].offsetWidth);
-            let current = Math.round(grid.scrollLeft / cards[0].offsetWidth);
-            let next = current + dir * visible;
-            next = Math.max(0, Math.min(next, cards.length - visible));
-            grid.scrollTo({ left: next * cards[0].offsetWidth, behavior: 'smooth' });
+            const cardWidth = cards[0].offsetWidth + 16;
+            let current = Math.round(grid.scrollLeft / cardWidth);
+            let next = current + dir;
+            if (next >= cards.length) next = 0;
+            if (next < 0) next = cards.length - 1;
+            grid.scrollTo({ left: next * cardWidth, behavior: 'smooth' });
         }
     </script>
     
