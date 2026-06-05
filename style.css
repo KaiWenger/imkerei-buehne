@@ -455,6 +455,10 @@ footer a:hover {
         grid-template-columns: 1fr;
     }
 
+    .about-content-reversed .about-image {
+    order: -1;
+    }
+
     .about-content,
     .about-content-reversed,
     .contact-content {
