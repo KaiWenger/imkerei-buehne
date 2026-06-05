@@ -168,10 +168,18 @@
             const grid = document.getElementById('productsGrid');
             const cards = grid.querySelectorAll('.product-card');
             const cardWidth = cards[0].offsetWidth + 24;
+            const maxScroll = grid.scrollWidth - grid.clientWidth;
             let current = Math.round(grid.scrollLeft / cardWidth);
             let next = current + dir;
-            if (next >= cards.length) next = 0;
-            if (next < 0) next = cards.length - 1;
+        
+            if (next >= cards.length) {
+                grid.scrollTo({ left: 0, behavior: 'smooth' });
+                return;
+            }
+            if (next < 0) {
+                grid.scrollTo({ left: maxScroll, behavior: 'smooth' });
+                return;
+            }
             grid.scrollTo({ left: next * cardWidth, behavior: 'smooth' });
         }
     
