@@ -501,6 +501,10 @@ footer a:hover {
     .news {
         padding: 40px 20px;
     }
+
+    .news-btn {
+    display: none;
+    }
     
     .news-carousel-wrapper {
         width: 100%;
@@ -515,8 +519,8 @@ footer a:hover {
     }
     
     .news-card-image {
-        height: 180px;
-        max-height: 180px;
+        height: 220px;
+        max-height: 220px;
     }
     
     .news-card h3 {
