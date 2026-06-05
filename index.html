@@ -89,6 +89,12 @@
                     </div>
                     <button class="carousel-btn right" onclick="scrollCards(1)">&#8250;</button>
                 </div>
+                <div class="product-dots" id="productDots">
+                    <span class="product-dot active"></span>
+                    <span class="product-dot"></span>
+                    <span class="product-dot"></span>
+                    <span class="product-dot"></span>
+                </div>
             </div>
         </section>
 
@@ -189,14 +195,30 @@
         
             if (next >= cards.length) {
                 grid.scrollTo({ left: 0, behavior: 'smooth' });
+                updateProductDots(0);
                 return;
             }
             if (next < 0) {
                 grid.scrollTo({ left: maxScroll, behavior: 'smooth' });
+                updateProductDots(cards.length - 1);
                 return;
             }
             grid.scrollTo({ left: next * cardWidth, behavior: 'smooth' });
+            updateProductDots(next);
         }
+        
+        function updateProductDots(index) {
+            const dots = document.querySelectorAll('.product-dot');
+            dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+        }
+        
+        document.getElementById('productsGrid').addEventListener('scroll', () => {
+            const grid = document.getElementById('productsGrid');
+            const cards = grid.querySelectorAll('.product-card');
+            const cardWidth = cards[0].offsetWidth + 24;
+            const current = Math.round(grid.scrollLeft / cardWidth);
+            updateProductDots(current);
+        });
     
         function scrollNews(dir) {
             const grid = document.getElementById('newsGrid');
