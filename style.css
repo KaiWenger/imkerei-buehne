@@ -495,6 +495,10 @@ footer a:hover {
         height: 250px;
     }
 
+    .news-card p,
+    .product-card p {
+        text-align: left;
+    }
     /* Products */
     .products {
         padding: 40px 20px;
