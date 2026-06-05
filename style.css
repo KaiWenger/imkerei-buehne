@@ -330,6 +330,11 @@ header {
     display: block;
 }
 
+.news-card-image {
+    overflow: hidden;
+    max-height: 250px;
+}
+
 .news-card h3 {
     color: #2c1810;
     margin-bottom: 0.75rem;
@@ -542,6 +547,11 @@ footer a:hover {
         min-height: 180px;
     }
 
+    .news-card-image {
+    height: 180px !important;
+    max-height: 180px;
+    }
+    
     .news-card h3 {
         font-size: 0.95rem;
     }
