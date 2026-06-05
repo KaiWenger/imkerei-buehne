@@ -338,6 +338,25 @@ header {
     line-height: 1.6;
 }
 
+.news-dots {
+    display: none;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.news-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ccc;
+    transition: background 0.3s;
+}
+
+.news-dot.active {
+    background: #2c1810;
+}
+
 /* Contact Section */
 .contact {
     padding: 80px 20px;
@@ -529,6 +548,10 @@ footer a:hover {
     
     .news-card p {
         font-size: 0.8rem;
+    }
+    
+    .news-dots {
+        display: flex;
     }
 }
 
