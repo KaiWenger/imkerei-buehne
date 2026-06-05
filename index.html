@@ -94,7 +94,6 @@
 
         <!-- News Section -->
         <section id="news" class="news">
-        <section id="news" class="news">
             <div class="container">
                 <h2>News</h2>
                 <div class="news-carousel-wrapper">
@@ -132,6 +131,11 @@
                         </div>
                     </div>
                     <button class="news-btn" onclick="scrollNews(1)">&#8250;</button>
+                </div>
+                <div class="news-dots" id="newsDots">
+                    <span class="news-dot active"></span>
+                    <span class="news-dot"></span>
+                    <span class="news-dot"></span>
                 </div>
             </div>
         </section>
@@ -203,7 +207,21 @@
             if (next >= cards.length) next = 0;
             if (next < 0) next = cards.length - 1;
             grid.scrollTo({ left: next * cardWidth, behavior: 'smooth' });
+            updateNewsDots(next);
         }
+        
+        function updateNewsDots(index) {
+            const dots = document.querySelectorAll('.news-dot');
+            dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+        }
+        
+        document.getElementById('newsGrid').addEventListener('scroll', () => {
+            const grid = document.getElementById('newsGrid');
+            const cards = grid.querySelectorAll('.news-card');
+            const cardWidth = cards[0].offsetWidth + 16;
+            const current = Math.round(grid.scrollLeft / cardWidth);
+            updateNewsDots(current);
+        });
     </script>
     
 </body>
