@@ -234,6 +234,25 @@ header {
     font-size: 0.85rem;
 }
 
+.product-dots {
+    display: none;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.product-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ccc;
+    transition: background 0.3s;
+}
+
+.product-dot.active {
+    background: #2c1810;
+}
+
 /* News Section */
 .news {
     padding: 80px 20px;
@@ -499,13 +518,18 @@ footer a:hover {
     .product-card p {
         text-align: left;
     }
+    
     /* Products */
     .products {
         padding: 40px 20px;
     }
-
+    
+    .carousel-btn {
+        display: none;
+    }
+    
     .product-card {
-        width: 85%;
+        width: 100%;
     }
 
     .product-card img {
@@ -520,6 +544,10 @@ footer a:hover {
         font-size: 0.8rem;
     }
 
+    .product-dots {
+    display: flex;
+    }
+    
     /* News */
     .news {
         padding: 40px 20px;
