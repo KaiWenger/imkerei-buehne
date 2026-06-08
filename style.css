@@ -612,3 +612,13 @@ footer a:hover {
         font-size: 0.9rem;
     }
 }
+
+.mobile-break {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .mobile-break {
+        display: block;
+    }
+}
